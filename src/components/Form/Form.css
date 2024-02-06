@@ -1,0 +1,157 @@
+.forms {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 500px;
+    padding: 2em;
+    text-transform: uppercase;
+    letter-spacing: 0.2ch;
+  }
+  
+  .form__input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.8em;
+  }
+  
+  .shake > *:not(button, .form__complete) {
+    animation: shake 300ms;
+  }
+  
+  .form__input span {
+    display: none;
+    position: absolute;
+    bottom: -1.5em;
+    color: var(--rederrors);
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    font-size: 0.74em;
+  }
+  
+  .form__input > label {
+    white-space: nowrap;
+    margin-bottom: 1em;
+  }
+  
+  .forms label {
+    font-size: 1rem;
+    color: var(--verydarkviolet);
+    font-weight: 600;
+  }
+  
+  input {
+    outline: none;
+    border: 0.15rem solid var(--lightgrayishviolet);
+    height: 2em;
+    width: 100%;
+    border-radius: 0.3rem;
+    padding: 1em;
+    font-size: 1em;
+    transition: border-color 300ms ease-in-out;
+  }
+  
+  input:focus {
+    background: linear-gradient(var(--white), var(--white)) padding-box,
+      linear-gradient(
+          to right,
+          var(--lineargradiendactiveone),
+          var(--lineargradiendactivetwo)
+        )
+        border-box;
+    border-color: transparent;
+  }
+  
+  input:invalid[focused="true"] {
+    border-color: var(--rederrors);
+  }
+  
+  input:invalid[focused="true"] ~ span {
+    display: block;
+  }
+  
+  .forms__detail,
+  .form__input > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .forms__detail {
+    margin-bottom: 1.2em;
+  }
+  
+  .form-button {
+    width: 100%;
+    border: none;
+    height: 3.3em;
+    border-radius: 0.7em;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1em;
+    transition: background 100ms ease-in-out;
+  }
+  
+  .purple {
+    background-color: var(--verydarkviolet);
+    color: var(--white);
+  }
+  
+  .gray-onhover:hover {
+    background-color: var(--lineargradiendactivetwo);
+  }
+  
+  .gray-onhover:active {
+    background-color: var(--lineargradiendactiveone);
+  }
+  
+  .form__complete {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 2rem 0;
+    animation: appear 100ms;
+  }
+  
+  .form__complete img {
+    margin-bottom: 2rem;
+  }
+  
+  .form__complete > h2 {
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+  
+  .form__complete > h2:after {
+    content: "!";
+    width: 100%;
+  }
+  
+  .form__complete > p {
+    font-size: normal;
+    letter-spacing: normal;
+  }
+  
+  @keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+  
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+  
